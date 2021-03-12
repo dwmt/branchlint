@@ -46,11 +46,13 @@ importers:
       standard: 16.0.3
   packages/branchlint-plugin-prefix:
     dependencies:
+      '@dwmt/branchlint-common': 'link:../branchlint-common'
       joi: registry.npmjs.org/joi/17.4.0
     devDependencies:
       jest: registry.npmjs.org/jest/26.6.3
       standard: registry.npmjs.org/standard/16.0.3
     specifiers:
+      '@dwmt/branchlint-common': 'workspace:*'
       jest: 26.6.3
       joi: 17.4.0
       standard: 16.0.3
