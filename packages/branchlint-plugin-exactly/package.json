@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/dwmt/branchlint#readme",
   "dependencies": {
+    "@dwmt/branchlint-common": "workspace:*",
     "joi": "17.4.0"
   },
   "devDependencies": {
