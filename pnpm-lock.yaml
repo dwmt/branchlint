@@ -5,6 +5,7 @@ importers:
       '@dwmt/branchlint-plugin-jira': 'link:../branchlint-plugin-jira'
       '@dwmt/branchlint-plugin-prefix': 'link:../branchlint-plugin-prefix'
       '@dwmt/branchlint-plugin-regexp': 'link:../branchlint-plugin-regexp'
+      joi: registry.npmjs.org/joi/17.4.0
     devDependencies:
       jest: registry.npmjs.org/jest/26.6.3
       standard: registry.npmjs.org/standard/16.0.3
@@ -14,34 +15,47 @@ importers:
       '@dwmt/branchlint-plugin-prefix': 'workspace:*'
       '@dwmt/branchlint-plugin-regexp': 'workspace:*'
       jest: 26.6.3
+      joi: 17.4.0
       standard: 16.0.3
   packages/branchlint-plugin-exactly:
+    dependencies:
+      joi: registry.npmjs.org/joi/17.4.0
     devDependencies:
       jest: registry.npmjs.org/jest/26.6.3
       standard: registry.npmjs.org/standard/16.0.3
     specifiers:
       jest: 26.6.3
+      joi: 17.4.0
       standard: 16.0.3
   packages/branchlint-plugin-jira:
+    dependencies:
+      joi: registry.npmjs.org/joi/17.4.0
     devDependencies:
       jest: registry.npmjs.org/jest/26.6.3
       standard: registry.npmjs.org/standard/16.0.3
     specifiers:
       jest: 26.6.3
+      joi: 17.4.0
       standard: 16.0.3
   packages/branchlint-plugin-prefix:
+    dependencies:
+      joi: registry.npmjs.org/joi/17.4.0
     devDependencies:
       jest: registry.npmjs.org/jest/26.6.3
       standard: registry.npmjs.org/standard/16.0.3
     specifiers:
       jest: 26.6.3
+      joi: 17.4.0
       standard: 16.0.3
   packages/branchlint-plugin-regexp:
+    dependencies:
+      joi: registry.npmjs.org/joi/17.4.0
     devDependencies:
       jest: registry.npmjs.org/jest/26.6.3
       standard: registry.npmjs.org/standard/16.0.3
     specifiers:
       jest: 26.6.3
+      joi: 17.4.0
       standard: 16.0.3
 lockfileVersion: 5.1
 packages:
@@ -537,6 +551,24 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/@eslint/eslintrc/-/eslintrc-0.2.2.tgz'
     version: 0.2.2
+  registry.npmjs.org/@hapi/hoek/9.1.1:
+    dev: false
+    name: '@hapi/hoek'
+    resolution:
+      integrity: sha512-CAEbWH7OIur6jEOzaai83jq3FmKmv4PmX1JYfs9IrYcGEVI/lyL1EXJGCj7eFVJ0bg5QR8LMxBlEtA+xKiLpFw==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@hapi/hoek/-/hoek-9.1.1.tgz'
+    version: 9.1.1
+  registry.npmjs.org/@hapi/topo/5.0.0:
+    dependencies:
+      '@hapi/hoek': registry.npmjs.org/@hapi/hoek/9.1.1
+    dev: false
+    name: '@hapi/topo'
+    resolution:
+      integrity: sha512-tFJlT47db0kMqVm3H4nQYgn6Pwg10GTZHb1pwmSiv1K4ks6drQOtfEF5ZnPjkvC+y4/bUPHK+bc87QvLcL+WMw==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@hapi/topo/-/topo-5.0.0.tgz'
+    version: 5.0.0
   registry.npmjs.org/@istanbuljs/load-nyc-config/1.1.0:
     dependencies:
       camelcase: registry.npmjs.org/camelcase/5.3.1
@@ -789,6 +821,32 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/@jest/types/-/types-26.6.2.tgz'
     version: 26.6.2
+  registry.npmjs.org/@sideway/address/4.1.1:
+    dependencies:
+      '@hapi/hoek': registry.npmjs.org/@hapi/hoek/9.1.1
+    dev: false
+    name: '@sideway/address'
+    resolution:
+      integrity: sha512-+I5aaQr3m0OAmMr7RQ3fR9zx55sejEYR2BFJaxL+zT3VM2611X0SHvPWIbAUBZVTn/YzYKbV8gJ2oT/QELknfQ==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@sideway/address/-/address-4.1.1.tgz'
+    version: 4.1.1
+  registry.npmjs.org/@sideway/formula/3.0.0:
+    dev: false
+    name: '@sideway/formula'
+    resolution:
+      integrity: sha512-vHe7wZ4NOXVfkoRb8T5otiENVlT7a3IAiw7H5M2+GO+9CDgcVUUsX1zalAztCmwyOr2RUTGJdgB+ZvSVqmdHmg==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@sideway/formula/-/formula-3.0.0.tgz'
+    version: 3.0.0
+  registry.npmjs.org/@sideway/pinpoint/2.0.0:
+    dev: false
+    name: '@sideway/pinpoint'
+    resolution:
+      integrity: sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@sideway/pinpoint/-/pinpoint-2.0.0.tgz'
+    version: 2.0.0
   registry.npmjs.org/@sinonjs/commons/1.8.2:
     dependencies:
       type-detect: registry.npmjs.org/type-detect/4.0.8
@@ -4442,6 +4500,20 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/jest/-/jest-26.6.3.tgz'
     version: 26.6.3
+  registry.npmjs.org/joi/17.4.0:
+    dependencies:
+      '@hapi/hoek': registry.npmjs.org/@hapi/hoek/9.1.1
+      '@hapi/topo': registry.npmjs.org/@hapi/topo/5.0.0
+      '@sideway/address': registry.npmjs.org/@sideway/address/4.1.1
+      '@sideway/formula': registry.npmjs.org/@sideway/formula/3.0.0
+      '@sideway/pinpoint': registry.npmjs.org/@sideway/pinpoint/2.0.0
+    dev: false
+    name: joi
+    resolution:
+      integrity: sha512-F4WiW2xaV6wc1jxete70Rw4V/VuMd6IN+a5ilZsxG4uYtUXWu2kq9W5P2dz30e7Gmw8RCbY/u/uk+dMPma9tAg==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/joi/-/joi-17.4.0.tgz'
+    version: 17.4.0
   registry.npmjs.org/js-tokens/4.0.0:
     dev: true
     name: js-tokens
