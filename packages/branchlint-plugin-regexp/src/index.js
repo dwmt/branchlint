@@ -33,21 +33,28 @@ Expected the branch name to match the following regular expression:
 `.trim()
 }
 
-module.exports = function regexp (branch, parameters) {
-  const { error } = schema.validate(parameters)
+module.exports = {
+  validateParameters(parameters) {
+    const { error } = schema.validate(parameters)
 
-  if (error) {
-    return Result.Error(VALIDATION_ERROR_MESSAGE)
+    if (error) {
+      return Result.Error(VALIDATION_ERROR_MESSAGE)
+    }
+
+    try {
+      new RegExp(parameters.pattern)
+    } catch {
+      return Result.Error(generateInvalidRegexpMessage(parameters.pattern))
+    }
+    
+    return Result.Success()
+  },
+
+  checkBranch(branch, parameters) {
+    let regexp = new RegExp(parameters.pattern)
+    
+    return regexp.test(branch)
+      ? Result.Success()
+      : Result.Failure(generateMatchFailureMessage(parameters.pattern))
   }
-
-  let regexp
-  try {
-    regexp = new RegExp(parameters.pattern)
-  } catch {
-    return Result.Error(generateInvalidRegexpMessage(parameters.pattern))
-  }
-
-  return regexp.test(branch)
-    ? Result.Success()
-    : Result.Failure(generateMatchFailureMessage(parameters.pattern))
 }

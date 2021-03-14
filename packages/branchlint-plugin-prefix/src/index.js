@@ -26,14 +26,18 @@ Expected the branch name to start with any of the following prefixes:
 `.trim()
 }
 
-module.exports = function prefix (branch, parameters) {
-  const { error } = schema.validate(parameters)
+module.exports = {
+  validateParameters(parameters) {
+    const { error } = schema.validate(parameters)
 
-  if (error) {
-    return Result.Error(VALIDATION_ERROR_MESSAGE)
+    return error
+      ? Result.Error(VALIDATION_ERROR_MESSAGE)
+      : Result.Success()
+  },
+
+  checkBranch(branch, parameters) {
+    return parameters.prefixes.some(prefix => branch.startsWith(prefix))
+      ? Result.Success()
+      : Result.Failure(generateFailureMessage(parameters.prefixes))
   }
-
-  return parameters.prefixes.some(prefix => branch.startsWith(prefix))
-    ? Result.Success()
-    : Result.Failure(generateFailureMessage(parameters.prefixes))
 }

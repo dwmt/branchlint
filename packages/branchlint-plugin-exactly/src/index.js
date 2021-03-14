@@ -26,16 +26,18 @@ Expected any of the following branch names:
 `.trim()
 }
 
-module.exports = function exactly (branch, parameters) {
-  const { error } = schema.validate(parameters)
+module.exports = {
+  validateParameters (parameters) {
+    const { error } = schema.validate(parameters)
 
-  if (error) {
-    return Result.Error(VALIDATION_ERROR_MESSAGE)
+    return error
+      ? Result.Error(VALIDATION_ERROR_MESSAGE)
+      : Result.Success()
+  },
+
+  checkBranch (branch, parameters) {
+    return parameters.allowed.includes(branch)
+      ? Result.Success()
+      : Result.Failure(generateFailureMessage(parameters.allowed))
   }
-
-  if (!parameters.allowed.includes(branch)) {
-    return Result.Failure(generateFailureMessage(parameters.allowed))
-  }
-
-  return Result.Success()
 }

@@ -1,5 +1,12 @@
 const { Result } = require('@dwmt/branchlint-common')
 
+const VALIDATION_ERROR_MESSAGE = `
+This plugin has no settings to tweak. You should simply use it as:
+
+  anyOf:
+  - uses: jira
+`.trim()
+
 const PROJECT_KEY_ERROR_MESSAGE = `
 The branch name should start with an uppercase Jira project key, as follows:
 
@@ -47,18 +54,26 @@ function containsKebabCaseTicketName (branch) {
   return /^[a-zA-Z0-9]+(-[a-zA-Z0-9]+)*$/.test(ticketName)
 }
 
-module.exports = function jira (branch) {
-  if (!containsProjectKey(branch)) {
-    return Result.Failure(PROJECT_KEY_ERROR_MESSAGE)
-  }
+module.exports = {
+  validateParameters(parameters) {
+    return parameters === undefined
+      ? Result.Success()
+      : Result.Failure(VALIDATION_ERROR_MESSAGE)
+  },
 
-  if (!containsTicketNumber(branch)) {
-    return Result.Failure(TICKET_NUMBER_ERROR_MESSAGE)
+  checkBranch(branch) {
+    if (!containsProjectKey(branch)) {
+      return Result.Failure(PROJECT_KEY_ERROR_MESSAGE)
+    }
+  
+    if (!containsTicketNumber(branch)) {
+      return Result.Failure(TICKET_NUMBER_ERROR_MESSAGE)
+    }
+  
+    if (!containsKebabCaseTicketName(branch)) {
+      return Result.Failure(KEBAB_CASE_ERROR_MESSAGE)
+    }
+  
+    return Result.Success()
   }
-
-  if (!containsKebabCaseTicketName(branch)) {
-    return Result.Failure(KEBAB_CASE_ERROR_MESSAGE)
-  }
-
-  return Result.Success()
 }
