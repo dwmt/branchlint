@@ -6,6 +6,7 @@ importers:
       '@dwmt/branchlint-plugin-prefix': 'link:../branchlint-plugin-prefix'
       '@dwmt/branchlint-plugin-regexp': 'link:../branchlint-plugin-regexp'
       joi: registry.npmjs.org/joi/17.4.0
+      js-yaml: registry.npmjs.org/js-yaml/4.0.0
     devDependencies:
       jest: registry.npmjs.org/jest/26.6.3
       standard: registry.npmjs.org/standard/16.0.3
@@ -16,6 +17,7 @@ importers:
       '@dwmt/branchlint-plugin-regexp': 'workspace:*'
       jest: 26.6.3
       joi: 17.4.0
+      js-yaml: 4.0.0
       standard: 16.0.3
   packages/branchlint-common:
     devDependencies:
@@ -1196,6 +1198,14 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/argparse/-/argparse-1.0.10.tgz'
     version: 1.0.10
+  registry.npmjs.org/argparse/2.0.1:
+    dev: false
+    name: argparse
+    resolution:
+      integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/argparse/-/argparse-2.0.1.tgz'
+    version: 2.0.1
   registry.npmjs.org/arr-diff/4.0.0:
     dev: true
     engines:
@@ -4545,6 +4555,17 @@ packages:
       registry: 'https://registry.npmjs.com/'
       tarball: 'https://registry.npmjs.org/js-yaml/-/js-yaml-3.14.1.tgz'
     version: 3.14.1
+  registry.npmjs.org/js-yaml/4.0.0:
+    dependencies:
+      argparse: registry.npmjs.org/argparse/2.0.1
+    dev: false
+    hasBin: true
+    name: js-yaml
+    resolution:
+      integrity: sha512-pqon0s+4ScYUvX30wxQi3PogGFAlUyH0awepWvwkj4jD4v+ova3RiYw8bmA6x2rDrEaj8i/oWKoRxpVNW+Re8Q==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/js-yaml/-/js-yaml-4.0.0.tgz'
+    version: 4.0.0
   registry.npmjs.org/jsbn/0.1.1:
     dev: true
     name: jsbn
