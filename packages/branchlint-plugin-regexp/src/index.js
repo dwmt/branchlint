@@ -33,7 +33,7 @@ Expected the branch name to match the following regular expression:
 `.trim()
 }
 
-module.exports = function prefix (branch, parameters) {
+module.exports = function regexp (branch, parameters) {
   const { error } = schema.validate(parameters)
 
   if (error) {
