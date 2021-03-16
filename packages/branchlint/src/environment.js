@@ -2,7 +2,7 @@ const { execSync } = require('child_process')
 const fs = require('fs')
 const path = require('path')
 
-const CURRENT_BRANCH_COMMAND = 'git rev-parse --abbrev-ref HEAD'
+const CURRENT_BRANCH_COMMAND = 'git branch --show-current'
 const CONFIG_FILENAME = '.branchlint.yml'
 
 function loadEnvironment (cwd) {
