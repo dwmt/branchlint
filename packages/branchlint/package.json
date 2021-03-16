@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/dwmt/branchlint#readme",
   "dependencies": {
+    "@dwmt/branchlint-common": "workspace:*",
     "@dwmt/branchlint-plugin-exactly": "workspace:*",
     "@dwmt/branchlint-plugin-jira": "workspace:*",
     "@dwmt/branchlint-plugin-prefix": "workspace:*",
