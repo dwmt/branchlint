@@ -27,7 +27,8 @@ Expected the branch name to start with any of the following prefixes:
 }
 
 module.exports = {
-  validateParameters(parameters) {
+  name: 'prefix',
+  validateParameters (parameters) {
     const { error } = schema.validate(parameters)
 
     return error
@@ -35,7 +36,7 @@ module.exports = {
       : Result.Success()
   },
 
-  checkBranch(branch, parameters) {
+  checkBranch (branch, parameters) {
     return parameters.prefixes.some(prefix => branch.startsWith(prefix))
       ? Result.Success()
       : Result.Failure(generateFailureMessage(parameters.prefixes))

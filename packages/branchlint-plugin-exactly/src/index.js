@@ -16,7 +16,7 @@ contains an array of allowed branch names. For example:
   - uses: exactly
     with:
       allowed: [master]
-`
+`.trim()
 
 function generateFailureMessage (expectedList) {
   return `
@@ -27,6 +27,7 @@ Expected any of the following branch names:
 }
 
 module.exports = {
+  name: 'exactly',
   validateParameters (parameters) {
     const { error } = schema.validate(parameters)
 

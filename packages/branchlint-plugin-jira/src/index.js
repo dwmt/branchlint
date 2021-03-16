@@ -55,25 +55,25 @@ function containsKebabCaseTicketName (branch) {
 }
 
 module.exports = {
-  validateParameters(parameters) {
+  name: 'jira',
+  validateParameters (parameters) {
     return parameters === undefined
       ? Result.Success()
       : Result.Failure(VALIDATION_ERROR_MESSAGE)
   },
-
-  checkBranch(branch) {
+  checkBranch (branch) {
     if (!containsProjectKey(branch)) {
       return Result.Failure(PROJECT_KEY_ERROR_MESSAGE)
     }
-  
+
     if (!containsTicketNumber(branch)) {
       return Result.Failure(TICKET_NUMBER_ERROR_MESSAGE)
     }
-  
+
     if (!containsKebabCaseTicketName(branch)) {
       return Result.Failure(KEBAB_CASE_ERROR_MESSAGE)
     }
-  
+
     return Result.Success()
   }
 }

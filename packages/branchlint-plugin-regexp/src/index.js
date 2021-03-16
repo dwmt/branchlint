@@ -34,7 +34,8 @@ Expected the branch name to match the following regular expression:
 }
 
 module.exports = {
-  validateParameters(parameters) {
+  name: 'regexp',
+  validateParameters (parameters) {
     const { error } = schema.validate(parameters)
 
     if (error) {
@@ -42,17 +43,18 @@ module.exports = {
     }
 
     try {
+      // eslint-disable-next-line no-new
       new RegExp(parameters.pattern)
     } catch {
       return Result.Error(generateInvalidRegexpMessage(parameters.pattern))
     }
-    
+
     return Result.Success()
   },
 
-  checkBranch(branch, parameters) {
-    let regexp = new RegExp(parameters.pattern)
-    
+  checkBranch (branch, parameters) {
+    const regexp = new RegExp(parameters.pattern)
+
     return regexp.test(branch)
       ? Result.Success()
       : Result.Failure(generateMatchFailureMessage(parameters.pattern))
