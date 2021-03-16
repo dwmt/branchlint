@@ -138,7 +138,7 @@ function validateAndLoadPlugin (pluginConfig, configDir) {
   } catch (e) {
     return {
       error: {
-        name: plugin.name,
+        plugin: plugin.name,
         message: ErrorMessages.validationError(pluginConfig.uses, e)
       }
     }
@@ -147,7 +147,7 @@ function validateAndLoadPlugin (pluginConfig, configDir) {
   if (validationResult.type !== ResultType.SUCCESS) {
     return {
       error: {
-        name: plugin.name,
+        plugin: plugin.name,
         message: validationResult.message
       }
     }
