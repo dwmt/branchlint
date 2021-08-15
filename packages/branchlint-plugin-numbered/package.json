@@ -1,0 +1,33 @@
+{
+  "name": "@dwmt/branchlint-plugin-numbered",
+  "version": "1.0.4",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "test": "jest --passWithNoTests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwmt/branchlint.git"
+  },
+  "keywords": [
+    "branchlint",
+    "lint",
+    "linter"
+  ],
+  "author": "DWMT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dwmt/branchlint/issues"
+  },
+  "homepage": "https://github.com/dwmt/branchlint#readme",
+  "dependencies": {
+    "@dwmt/branchlint-common": "workspace:*"
+  },
+  "devDependencies": {
+    "jest": "26.6.3",
+    "standard": "16.0.3"
+  }
+}
