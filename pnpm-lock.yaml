@@ -4,6 +4,7 @@ importers:
       '@dwmt/branchlint-common': 'link:../branchlint-common'
       '@dwmt/branchlint-plugin-exactly': 'link:../branchlint-plugin-exactly'
       '@dwmt/branchlint-plugin-jira': 'link:../branchlint-plugin-jira'
+      '@dwmt/branchlint-plugin-numbered': 'link:../branchlint-plugin-numbered'
       '@dwmt/branchlint-plugin-prefix': 'link:../branchlint-plugin-prefix'
       '@dwmt/branchlint-plugin-regexp': 'link:../branchlint-plugin-regexp'
       joi: registry.npmjs.org/joi/17.4.0
@@ -15,6 +16,7 @@ importers:
       '@dwmt/branchlint-common': 'workspace:*'
       '@dwmt/branchlint-plugin-exactly': 'workspace:*'
       '@dwmt/branchlint-plugin-jira': 'workspace:*'
+      '@dwmt/branchlint-plugin-numbered': 'workspace:*'
       '@dwmt/branchlint-plugin-prefix': 'workspace:*'
       '@dwmt/branchlint-plugin-regexp': 'workspace:*'
       jest: 26.6.3
