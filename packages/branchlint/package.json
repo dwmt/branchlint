@@ -1,6 +1,6 @@
 {
   "name": "@dwmt/branchlint",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Enforce a consistent branch naming strategy in your git repository.",
   "main": "src/index.js",
   "bin": {
