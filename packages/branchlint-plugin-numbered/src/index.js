@@ -10,7 +10,7 @@ This plugin has no settings to tweak. You should simply use it as:
 const ISSUE_NUMBER_ERROR_MESSAGE = `
 The branch name should start with an issue number, as follows:
 
-  19-additional-text
+  #19-additional-text
 `.trim()
 function containsIssueNumber (branch) {
   const issueNumber = branch.split('-')[0]
@@ -19,13 +19,13 @@ function containsIssueNumber (branch) {
     return false
   }
 
-  return /^[0-9]+$/.test(issueNumber)
+  return /^\#[0-9]+$/.test(issueNumber)
 }
 
 const KEBAB_CASE_ERROR_MESSAGE = `
 The issue number number should be followed by the issue name in kebab case, as follows:
 
-  19-additional-text
+  #19-additional-text
 `.trim()
 function containsKebabCaseTicketName (branch) {
   const segments = branch.split('-')
@@ -36,7 +36,7 @@ function containsKebabCaseTicketName (branch) {
 
   const issueName = segments.slice(1).join('-')
 
-  return /^[a-zA-Z0-9]+(-[a-zA-Z0-9]+)*$/.test(issueName)
+  return /^\#[a-zA-Z0-9]+(-[a-zA-Z0-9]+)*$/.test(issueName)
 }
 
 module.exports = {
