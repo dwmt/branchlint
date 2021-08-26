@@ -19,7 +19,7 @@ function containsIssueNumber (branch) {
     return false
   }
 
-  return /^\#[0-9]+$/.test(issueNumber)
+  return /^#[0-9]+$/.test(issueNumber)
 }
 
 const KEBAB_CASE_ERROR_MESSAGE = `
@@ -36,7 +36,7 @@ function containsKebabCaseTicketName (branch) {
 
   const issueName = segments.slice(1).join('-')
 
-  return /^\#[a-zA-Z0-9]+(-[a-zA-Z0-9]+)*$/.test(issueName)
+  return /^#[a-zA-Z0-9]+(-[a-zA-Z0-9]+)*$/.test(issueName)
 }
 
 module.exports = {
