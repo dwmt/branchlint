@@ -36,7 +36,7 @@ function containsKebabCaseTicketName (branch) {
 
   const issueName = segments.slice(1).join('-')
 
-  return /^#[a-zA-Z0-9]+(-[a-zA-Z0-9]+)*$/.test(issueName)
+  return /^[a-zA-Z0-9]+(-[a-zA-Z0-9]+)*$/.test(issueName)
 }
 
 module.exports = {
