@@ -1,11 +1,8 @@
 {
-  "name": "@dwmt/branchlint",
+  "name": "@dwmt/branchlint-plugin-github",
   "version": "1.4.0",
-  "description": "Enforce a consistent branch naming strategy in your git repository.",
+  "description": "",
   "main": "src/index.js",
-  "bin": {
-    "branchlint": "./bin/branchlint"
-  },
   "scripts": {
     "lint": "standard",
     "lint:fix": "standard --fix",
@@ -28,14 +25,7 @@
   "homepage": "https://github.com/dwmt/branchlint#readme",
   "dependencies": {
     "@dwmt/branchlint-common": "workspace:*",
-    "@dwmt/branchlint-plugin-exactly": "workspace:*",
-    "@dwmt/branchlint-plugin-github": "workspace:*",
-    "@dwmt/branchlint-plugin-jira": "workspace:*",
-    "@dwmt/branchlint-plugin-numbered": "workspace:*",
-    "@dwmt/branchlint-plugin-prefix": "workspace:*",
-    "@dwmt/branchlint-plugin-regexp": "workspace:*",
-    "joi": "17.4.0",
-    "js-yaml": "4.0.0"
+    "joi": "17.4.0"
   },
   "devDependencies": {
     "jest": "26.6.3",
